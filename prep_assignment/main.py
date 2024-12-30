@@ -11,7 +11,7 @@ def test_mcx_k(k):
         allocate(k, ctrl)
         allocate(1, target)
         
-        hadamard_transform(ctrl)
+        # hadamard_transform(ctrl)
         mcx(k, ctrl, target)
     
     return main
@@ -35,26 +35,26 @@ save_qprog("q1_width", width_model_circ)
 save_qprog("q1_depth", depth_model_circ)
 save_qprog("q1_inbetween", inbetween_model_circ)
 
-job = execute(width_model_circ)
-results_width = job.result()[0].value.parsed_counts
+# job = execute(width_model_circ)
+# results_width = job.result()[0].value.parsed_counts
 circuit_width = QuantumProgram.from_qprog(width_model_circ).data.width
 circuit_depth = QuantumProgram.from_qprog(width_model_circ).transpiled_circuit.depth
 print(f"The circuit width is {circuit_width} and the circuit_depth is {circuit_depth}")
-print(results_width)
+# print(results_width)
 
-job = execute(depth_model_circ)
-results_depth = job.result()[0].value.parsed_counts
+# job = execute(depth_model_circ)
+# results_depth = job.result()[0].value.parsed_counts
 circuit_width = QuantumProgram.from_qprog(depth_model_circ).data.width
 circuit_depth = QuantumProgram.from_qprog(depth_model_circ).transpiled_circuit.depth
 print(f"The circuit width is {circuit_width} and the circuit_depth is {circuit_depth}")
-print(results_depth)
+# print(results_depth)
 
-job = execute(inbetween_model_circ)
-results_inbetween = job.result()[0].value.parsed_counts
+# job = execute(inbetween_model_circ)
+# results_inbetween = job.result()[0].value.parsed_counts
 circuit_width = QuantumProgram.from_qprog(inbetween_model_circ).data.width
 circuit_depth = QuantumProgram.from_qprog(inbetween_model_circ).transpiled_circuit.depth
 print(f"The circuit width is {circuit_width} and the circuit_depth is {circuit_depth}")
-print(results_inbetween)
+# print(results_inbetween)
 
 #%% Q2 
 test_mcx_func = test_mcx_k(20)
@@ -69,14 +69,14 @@ save_qprog("q2_width", width_model_circ)
 save_qprog("q2_depth", depth_model_circ)
 
 
-job = execute(width_model_circ)
-results_width = job.result()[0].value.parsed_counts
+# job = execute(width_model_circ)
+# results_width = job.result()[0].value.parsed_counts
 circuit_width = QuantumProgram.from_qprog(width_model_circ).data.width
 circuit_depth = QuantumProgram.from_qprog(width_model_circ).transpiled_circuit.depth
 print(f"The circuit width is {circuit_width} and the circuit_depth is {circuit_depth}")
 
-job = execute(depth_model_circ)
-results_depth = job.result()[0].value.parsed_counts
+# job = execute(depth_model_circ)
+# results_depth = job.result()[0].value.parsed_counts
 circuit_width = QuantumProgram.from_qprog(depth_model_circ).data.width
 circuit_depth = QuantumProgram.from_qprog(depth_model_circ).transpiled_circuit.depth
 print(f"The circuit width is {circuit_width} and the circuit_depth is {circuit_depth}")
